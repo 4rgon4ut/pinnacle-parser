@@ -26,7 +26,7 @@ class Group(models.Model):
 
 
 class League(models.Model):
-    """Leagues of sport"""
+    """Sport leagues"""
     name = models.CharField('League', max_length=50, primary_key=True)
 
     def __str__(self):

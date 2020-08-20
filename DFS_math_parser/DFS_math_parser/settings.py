@@ -19,15 +19,22 @@ NEWSPIDER_MODULE = 'DFS_math_parser.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-RETRY_TIMES = 10
-
-RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
     'scrapy_proxies.RandomProxy': 100,
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
 }
+
+
+# TODO: Set DB connection details
+
+DATABASE_SETTINGS = {
+    'database': '',
+    'user': '',
+    'password': '',
+}
+
 
 # TODO: Set proxy settings
 
@@ -37,7 +44,7 @@ DOWNLOADER_MIDDLEWARES = {
 # 2 = Put a custom proxy to use in the setting
 PROXY_MODE = 2
 
-CUSTOM_PROXY = "http://user46178:1nry0m@45.90.197.197:6626"
+CUSTOM_PROXY = ""
 
 # Proxy list containing entries like
 # http://host1:port
@@ -46,3 +53,6 @@ CUSTOM_PROXY = "http://user46178:1nry0m@45.90.197.197:6626"
 # ...
 # PROXY_LIST = '/home/n30n/Run/DFS_math/DFS_math_parser/DFS_math_parser/proxy'
 
+RETRY_TIMES = 10
+
+RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
